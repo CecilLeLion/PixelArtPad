@@ -29,8 +29,46 @@ function createGrid() {
         drawPad.appendChild(grid);
     }
 }
+let numOfBlocks = (gridSize.value **2)
 
 //function to remove grid
 function removeGrid() {
     drawPad.innerHTML = '';
+}
+
+//Functionality to button for hiding grid lines
+const hideGridBtn = document.querySelector('#hideGridLines')
+
+hideGridBtn.addEventListener('click', hideGridLine)
+ 
+function hideGridLine() {
+    let len = document.getElementsByClassName('gridBlock');
+    let i;
+    for (i = 0; i < len.length; i++) {
+        len[i].style.borderColor = 'transparent'
+    }
+}
+
+//Functionality to button for showing grid lines
+const showGridBtn = document.querySelector('#showGridLines')
+
+showGridBtn.addEventListener('click', showGridLine)
+
+function showGridLine() {
+    let len = document.getElementsByClassName('gridBlock');
+    let i
+    for (i=0; i<len.length; i++) {
+        len[i].style.borderColor = 'rgba(0, 0, 0, 0.363)' 
+        len[i].style.backgroundColor = 'grey'
+    }
+}
+
+//Functionality to clear button
+const clearBtn = document.querySelector('#clearContent')
+
+clearBtn.addEventListener('click', resetGrid);
+
+function resetGrid() {
+    removeGrid();
+    createGrid();
 }

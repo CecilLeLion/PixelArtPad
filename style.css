@@ -35,7 +35,7 @@ body {
 .gridBlock {
     background-color: rgba(245, 222, 179, 0.507);
     display: flex;
-    border: solid rgba(0, 0, 0, 0.671) 1px;
+    border: solid rgba(0, 0, 0, 0.363) 1px;
 }
 .slideContainer {
     display: flex;
