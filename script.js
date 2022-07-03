@@ -59,7 +59,6 @@ function showGridLine() {
     let i
     for (i=0; i<len.length; i++) {
         len[i].style.borderColor = 'rgba(0, 0, 0, 0.363)' 
-        len[i].style.backgroundColor = 'grey'
     }
 }
 
@@ -72,3 +71,13 @@ function resetGrid() {
     removeGrid();
     createGrid();
 }
+
+//Change background color of grid block
+const gridBlock = document.getElementsByClassName('gridBlock');
+//Changes targets background color to blue
+function respondToClick(e) {
+    e.target.style.backgroundColor = 'blue'
+}
+//When an item within drawpad is clicked
+//Respond to click function is used
+drawPad.addEventListener('click', respondToClick)
