@@ -69,12 +69,6 @@ body {
     font-family: monospace;
     font-size: 10px;
 }
-.colorPreview {
-    width: 50px;
-    height: 50px;
-    border: solid rgb(139, 255, 207) 1px;
-    border-radius: 50%;
-}
 .gridSizeSelector {
     margin-top: 75%;
 }
@@ -87,6 +81,18 @@ body {
 .gridBlock:hover {
     background-color: rgb(139, 255, 207, 0.5);
 }
-.gridBlock:active {
-    background-color: aqua;
+#colorSelect::-webkit-color-swatch-wrapper{
+    padding: 0;
+}
+#colorSelect::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+
+}
+#colorSelect {
+    height: 50px;
+    width: 50px;
+    border: none;
+    padding: none;
+    border-radius: 50%;
 }

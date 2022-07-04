@@ -74,10 +74,13 @@ function resetGrid() {
 
 //Change background color of grid block
 const gridBlock = document.getElementsByClassName('gridBlock');
-//Changes targets background color to blue
+//Changes targets background color based on color picker choice
 function respondToClick(e) {
-    e.target.style.backgroundColor = 'blue'
+    const colorChoice = document.getElementById('colorSelect').value;
+    e.target.style.backgroundColor = colorChoice
 }
 //When an item within drawpad is clicked
 //Respond to click function is used
-drawPad.addEventListener('click', respondToClick)
+drawPad.addEventListener('mousedown', respondToClick)
+
+
