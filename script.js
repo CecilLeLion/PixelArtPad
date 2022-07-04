@@ -2,6 +2,14 @@ const gridSize = document.getElementById('myRange')
 const sizeDisplay = document.getElementById('gridText')
 const drawPad = document.getElementById('drawpad')
 const grid = document.createElement('div');
+let currentMode = 'color'
+
+// Button functionality
+const eraser = document.querySelector('#eraser')
+const color = document.querySelector('#color')
+const hideGridBtn = document.querySelector('#hideGridLines')
+const showGridBtn = document.querySelector('#showGridLines')
+const clearBtn = document.querySelector('#clearContent')
 
 //Create base grid
 createGrid()
@@ -15,6 +23,7 @@ gridSize.oninput = function() {
     removeGrid();
     createGrid();
 }
+
 //Displays default grid size upon page startup
 sizeDisplay.textContent = `Grid Size: ${gridSize.value} x ${gridSize.value}`;
 sizeDisplay.style.fontSize = '10px'
@@ -36,9 +45,7 @@ function removeGrid() {
     drawPad.innerHTML = '';
 }
 
-//Functionality to button for hiding grid lines
-const hideGridBtn = document.querySelector('#hideGridLines')
-
+//Hide grid lines when button is clicked
 hideGridBtn.addEventListener('click', hideGridLine)
  
 function hideGridLine() {
@@ -49,9 +56,7 @@ function hideGridLine() {
     }
 }
 
-//Functionality to button for showing grid lines
-const showGridBtn = document.querySelector('#showGridLines')
-
+//Show grid lines when button is clicked
 showGridBtn.addEventListener('click', showGridLine)
 
 function showGridLine() {
@@ -62,9 +67,7 @@ function showGridLine() {
     }
 }
 
-//Functionality to clear button
-const clearBtn = document.querySelector('#clearContent')
-
+//Clear grid when button is clicked
 clearBtn.addEventListener('click', resetGrid);
 
 function resetGrid() {
@@ -75,12 +78,39 @@ function resetGrid() {
 //Change background color of grid block
 const gridBlock = document.getElementsByClassName('gridBlock');
 //Changes targets background color based on color picker choice
+//Or erases block clicked
 function respondToClick(e) {
     const colorChoice = document.getElementById('colorSelect').value;
-    e.target.style.backgroundColor = colorChoice
+    if (currentMode === 'eraser') {
+        e.target.style.backgroundColor = 'rgba(245, 222, 179, 0.507)'
+    } else if (currentMode === 'color') {
+        e.target.style.backgroundColor = colorChoice
+    }
 }
 //When an item within drawpad is clicked
 //Respond to click function is used
 drawPad.addEventListener('mousedown', respondToClick)
 
+//When eraser or color is clicked activate setCurrentMode function
+eraser.onclick = () => setCurrentMode('eraser')
+color.onclick = () => setCurrentMode('color')
 
+//Function sets the color mode from eraser or color depending on button clicked
+function setCurrentMode(mode) {
+    activateButton(mode);
+    currentMode = mode
+}
+
+//Function which actually activates the buttons
+function activateButton(mode) {
+    if (currentMode === 'color') {
+        eraser.classList.remove('active');
+    } else if (currentMode === 'eraser') {
+        color.classList.remove('active');
+    }
+    if (mode = 'color') {
+        color.classList.add('active');
+    } else if (mode = 'eraser') {
+        eraser.classList.add('active')
+    }
+}

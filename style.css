@@ -60,7 +60,7 @@ body {
     font-family: 'Patrick Hand SC';
     font-size: 32px;
 }
-.btn {
+.btn, #eraser, #color, #clearContent, #showGridLines, #hideGridLines {
     border-radius: 2%;
     border: solid rgb(139, 255, 207) 1px;
     background-color: rgb(139, 255, 207, 0.2);
@@ -72,10 +72,10 @@ body {
 .gridSizeSelector {
     margin-top: 75%;
 }
-.btn:hover {
+.btn:hover, #eraser:hover, #color:hover, #clearContent:hover, #showGridLines:hover, #hideGridLines:hover {
     background-color: rgb(139, 255, 207);
 }
-.btn:active {
+.btn:active, #eraser:active, #color:active, #clearContent:active, #showGridLines:active, #hideGridLines:active {
     transform: scale(1.1);
 }
 .gridBlock:hover {
