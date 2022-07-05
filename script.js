@@ -69,7 +69,17 @@ function showGridLine() {
 }
 
 //Clear grid when button is clicked
-clearBtn.addEventListener('click', resetGrid);
+clearBtn.addEventListener('click', clearGrid);
+
+//Prompts user to clear grid incase user accidentally clicked button
+function clearGrid() {
+    let choice = prompt('Clear Grid? Y/N');
+    if (choice.toLowerCase() === 'y') {
+        resetGrid();
+    } else {
+        return
+    }
+}
 
 function resetGrid() {
     removeGrid();
