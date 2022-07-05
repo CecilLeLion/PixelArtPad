@@ -18,7 +18,7 @@ createGrid()
 //Also displays grid size above slider
 gridSize.oninput = function() {
     sizeDisplay.innerHTML = `Grid Size: ${this.value} x ${this.value}`;
-    sizeDisplay.style.fontSize = '10px'
+    sizeDisplay.style.fontSize = '14px'
     //first removes previous grid before generating new one
     removeGrid();
     createGrid();
@@ -26,15 +26,15 @@ gridSize.oninput = function() {
 
 //Displays default grid size upon page startup
 sizeDisplay.textContent = `Grid Size: ${gridSize.value} x ${gridSize.value}`;
-sizeDisplay.style.fontSize = '10px'
+sizeDisplay.style.fontSize = '14px'
 
 //function to create the grid
 function createGrid() {
     for (let i=0; i < gridSize.value ** 2; i++) {
         const grid = document.createElement('div');
         grid.classList.add('gridBlock');
-        grid.style.width = (`${(400/gridSize.value)-2}px`);
-        grid.style.height = (`${(400/gridSize.value)-2}px`);
+        grid.style.width = (`${(600/gridSize.value)-2}px`);
+        grid.style.height = (`${(600/gridSize.value)-2}px`);
         drawPad.appendChild(grid);
     }
 }

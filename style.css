@@ -19,7 +19,15 @@ body {
     background-color: rgba(128, 128, 128, 0.5);
     margin-right: 50px;
     align-items: center;
-    width: 125px;
+    width: 200px;
+    justify-content: space-between;
+}
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 200px;
 }
 .content {
     display: flex;
@@ -28,8 +36,8 @@ body {
 .drawpad {
     border: solid black;
     display: flex;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     flex-wrap: wrap;
 }
 .gridBlock {
@@ -44,7 +52,7 @@ body {
     font-family: monospace;
 }
 .slider {
-    width: 100px;
+    width: 180px;
 }
 .footer {
     background-color: gray;
@@ -56,18 +64,19 @@ body {
     display: flex;
     min-width: 100%;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 2%;
     font-family: 'Patrick Hand SC';
-    font-size: 32px;
+    font-size: 64px;
+    color: darkslategray;
 }
 .btn, #eraser, #color, #clearContent, #showGridLines, #hideGridLines {
     border-radius: 2%;
     border: solid rgb(139, 255, 207) 1px;
     background-color: rgb(139, 255, 207, 0.2);
-    width: 100px;
+    width: 180px;
     padding: 3px;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 14px;
 }
 .gridSizeSelector {
     margin-top: 75%;
@@ -90,9 +99,14 @@ body {
 
 }
 #colorSelect {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     border: none;
     padding: none;
     border-radius: 50%;
+}
+a {
+    text-decoration: none;
+    color: black;
+    padding-left: .5em;
 }
