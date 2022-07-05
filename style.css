@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     background-image: url('background.gif');
     background-size: cover;
+    gap: 25px;
 }
 .gridLeft {
     display: flex;
@@ -25,7 +26,7 @@ body {
 .settings {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
     align-items: center;
     width: 200px;
 }
