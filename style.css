@@ -69,7 +69,7 @@ body {
     font-size: 64px;
     color: darkslategray;
 }
-.btn, #eraser, #color, #clearContent, #showGridLines, #hideGridLines {
+.btn, #eraser, #color, #rainbow, #clearContent, #showGridLines, #hideGridLines {
     border-radius: 2%;
     border: solid rgb(139, 255, 207) 1px;
     background-color: rgb(139, 255, 207, 0.2);
@@ -81,10 +81,10 @@ body {
 .gridSizeSelector {
     margin-top: 75%;
 }
-.btn:hover, #eraser:hover, #color:hover, #clearContent:hover, #showGridLines:hover, #hideGridLines:hover {
+.btn:hover, #eraser:hover, #rainbow:hover, #color:hover, #clearContent:hover, #showGridLines:hover, #hideGridLines:hover {
     background-color: rgb(139, 255, 207);
 }
-.btn:active, #eraser:active, #color:active, #clearContent:active, #showGridLines:active, #hideGridLines:active {
+.btn:active, #eraser:active, #rainbow:active, #color:active, #clearContent:active, #showGridLines:active, #hideGridLines:active {
     transform: scale(1.1);
 }
 .gridBlock:hover {

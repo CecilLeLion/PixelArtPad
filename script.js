@@ -7,6 +7,7 @@ let currentMode = 'color'
 // Button functionality
 const eraser = document.querySelector('#eraser')
 const color = document.querySelector('#color')
+const rainbow = document.querySelector('#rainbow')
 const hideGridBtn = document.querySelector('#hideGridLines')
 const showGridBtn = document.querySelector('#showGridLines')
 const clearBtn = document.querySelector('#clearContent')
@@ -84,7 +85,12 @@ function respondToClick(e) {
     if (currentMode === 'eraser') {
         e.target.style.backgroundColor = 'rgba(245, 222, 179, 0.507)'
     } else if (currentMode === 'color') {
-        e.target.style.backgroundColor = colorChoice
+        e.target.style.backgroundColor = colorChoice;
+    } else if (currentMode === 'rainbow') {
+        let red = parseInt(Math.random() * 255);
+        let green = parseInt(Math.random() * 255);
+        let blue = parseInt(Math.random() * 255);
+        e.target.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, 1)`
     }
 }
 //When an item within drawpad is clicked
@@ -94,6 +100,7 @@ drawPad.addEventListener('mousedown', respondToClick)
 //When eraser or color is clicked activate setCurrentMode function
 eraser.onclick = () => setCurrentMode('eraser')
 color.onclick = () => setCurrentMode('color')
+rainbow.onclick = () => setCurrentMode('rainbow')
 
 //Function sets the color mode from eraser or color depending on button clicked
 function setCurrentMode(mode) {
@@ -107,10 +114,14 @@ function activateButton(mode) {
         eraser.classList.remove('active');
     } else if (currentMode === 'eraser') {
         color.classList.remove('active');
+    } else if (currentMode === 'rainbow') {
+        rainbow.classList.remove('active');
     }
     if (mode = 'color') {
         color.classList.add('active');
     } else if (mode = 'eraser') {
         eraser.classList.add('active')
+    } else if (mode = 'rainbow') {
+        rainbow.classList.add('active')
     }
 }
